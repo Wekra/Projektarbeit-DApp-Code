@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Sheet Library</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-push-2">
+        <h1 class="text-center">Sheet Library Smart Contract on Ethereum</h1>
+        <hr />
+        <br />
+        <div id="loader">
+          <p class="text-center">Loading...</p>
+        </div>
+        <div id="content" style="display: none;">
+          <h2>Available Sheets on the contract</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Available Copies</th>
+                <th scope="col">Owner</th>
+                <th scope="col">Current Holder</th>
+                <th scope="col">State</th>
+              </tr>
+            </thead>
+            <tbody id="availableSheets">
+            </tbody>
+          </table>
+          <hr />
+          <br />
+          <h2>Add a new Sheet</h2>
+          <form id="addSheet">
+            <div class="form-group">
+              <label for="sheetTitle">Sheet Title</label>
+              <input name="sheetTitle" type="text" id="sheetTitle">
+
+              <label for="copies">Number of copies</lable>
+              <input name="copies" type="number" id="copies">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit new sheet</button>
+          </form>
+          <hr />
+          <br />
+          <h2>Borrow a sheet</h2>
+          <form onSubmit="App.borrowSheet(); return false;">
+            <div class="form-group">
+              <label for="borrowSelect">Select Sheet to borrow</label>
+              <select class="form-control" id="borrowSelect"></select>
+            </div>
+            <button type="submit" class="btn btn-primary">Borrow</button>
+          </form>
+          <hr />
+          <br />
+          <p id="accountAddress" class="text-center"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/web3.min.js"></script>
+  <script src="js/truffle-contract.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
